@@ -1,0 +1,21 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.btn {
+  background-color: transparent;
+  color: salmon;
+  border: 3px solid salmon;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: salmon;
+  color: #fff;
+}
+
+/*# sourceMappingURL=main.css.map */
