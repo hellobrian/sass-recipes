@@ -1,10 +1,10 @@
 {
-  "name": "gulp",
+  "name": "gulp-sass-recipe",
   "version": "1.0.0",
-  "description": "Basic gulpfile for sass",
+  "description": "Basic gulpfile for using gulp-sass",
   "main": "gulpfile.js",
   "scripts": {
-    "build:sass": "gulp sass"
+    "dev": "gulp sass"
   },
   "author": "",
   "license": "ISC",
