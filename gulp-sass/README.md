@@ -75,7 +75,7 @@ Start by writing a gulp task called `sass:build` that returns a `gulp.src()` to 
 gulp.task('sass:build', () => {
   return gulp.src('src/scss/*.scss')
     .pipe(gulp.dest('dist/css));
-})
+});
 ```
 
 ️️`gulp.src()` takes a `globby` pattern to target source files or folders to do something with. In this case, we're saying, look inside `src/scss` folder for any SCSS file (`*.scss`) and do something to it. For me, I always have a `main.scss` file located here that `@imports` all the other SCSS partials for my app. The reason why I'm using the `*.scss` syntax is because it allows me the flexibility to rename `main.scss` to something else if I need to. 
