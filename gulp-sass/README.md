@@ -108,6 +108,51 @@ This is our full, completed `sass:build` gulp task. Let's break down what's happ
 If we want to use `sourcemaps`, the first thing we need to do is stream our src contents to `.pipe(sourcemaps.init())`.
 Once we're done doing everything we need to do with our SCSS files, we'll stream the compiled src content to `.pipe(sourcemaps.write('./'))` (the `./` path will resolve to whatever path we set in `gulp.dest`).
 
+Next, we stream our content to `.pipe(sass())`. 
+
+You can see that two things are happening. 
+
+First, we're passing in an object to `sass()`. This will configure certain options for your sass compiler; I'm setting `{ ouputStyle: 'expanded' }` so that my CSS will be indented in the way I like. Note that `gulp-sass` uses `node-sass` under the hood ([see list of options](https://github.com/sass/node-sass#includepaths)). 
+
+Second thing is that `sass().on()` thingy. 
+
+Whenever there's a compile error in our sass, it will log an error message to the console. 
+
+Autoprefixer is pretty straight-forward. 
+We stream our compiled SCSS to autoprefixer and make sure that it adds vendor prefixes that are compaitible the `last 2 versions` of all browsers.
+
+### Writing the `sass:watch` task
+
+Here it is!
+
+```js
+gulp.task('sass:watch', ['sass:build'], () => {
+  gulp.watch('src/**/*.scss', ['sass:build']);
+});
+```
+
+Let's break it down!
+
+That `['sass:build']` thing is new, right? This means that when we run `gulp sass:watch`, it's going to run `gulp sass:build` first, wait for it to be done, then start running its own task.
+
+The task itself is just using `gulp.watch`. You may have guessed it but this is going to watch our SCSS files for changes. 
+
+We give `gulp.watch` a globby pattern, but this time the pattern looks like `src/**/*.scss`. This means, look in the `src` folder, and all subfolders, and target any files with the `.scss` extension.
+
+
+### Writing the `sass` task
+
+The last-ish task that we write is the one we're going to use in development for future projects. 
+
+```js
+gulp.task('sass', ['sass:watch', 'sass:build']);
+```
+
+All this does is run `sass:watch` and `sass:build` tasks as one process when we execute `gulp sass`. 
+
+### Final Code
+
+All together now! 🎉
 
 ```js
 const gulp = require('gulp');
@@ -139,4 +184,6 @@ gulp.task('default', () => {
   console.log('Use npm scripts');
 });
 ```
+
+> Bonus: I usually like to map my build tasks to `npm` scripts because I can do `npm run` to see what scripts are available to me. As a convention, I'll have a `npm run dev` script for my build/watch tasks. 
 
