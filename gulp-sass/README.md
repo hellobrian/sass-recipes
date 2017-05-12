@@ -74,7 +74,7 @@ Start by writing a gulp task called `sass:build` that returns a `gulp.src()` to 
 ```js
 gulp.task('sass:build', () => {
   return gulp.src('src/scss/*.scss')
-    .pipe(gulp.dest('dist/css));
+    .pipe(gulp.dest('dist/css'))
 });
 ```
 
