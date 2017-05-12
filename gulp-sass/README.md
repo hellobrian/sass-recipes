@@ -69,7 +69,7 @@ const sourcemaps = require('gulp-sourcemaps');
 
 ### Writing the `sass:build` task
 
-Start by writing a gulp task called `sass:build` that returns a `gulp.src()` to our SCSS files:
+Start by writing a gulp task called `sass:build` that returns a `gulp.src()` to our SCSS files. We feed the source files for our task using `gulp.src()`,using a `globby` pattern. 
 
 ```js
 gulp.task('sass:build', () => {
@@ -78,9 +78,11 @@ gulp.task('sass:build', () => {
 });
 ```
 
-️️`gulp.src()` takes a `globby` pattern to target source files or folders to do something with. In this case, we're saying, look inside `src/scss` folder for any SCSS file (`*.scss`) and do something to it. For me, I always have a `main.scss` file located here that `@imports` all the other SCSS partials for my app. The reason why I'm using the `*.scss` syntax is because it allows me the flexibility to rename `main.scss` to something else if I need to. 
+️️Here we're saying, look inside `src/scss` folder for any SCSS file (`*.scss`) and do something to it.
 
-`gulp.dest()` will be the last step of this task.
+For me, I always have a `main.scss` file located here that `@imports` all the other SCSS partials for my app. The reason why I'm using the `*.scss` syntax is because I can rename `main.scss` to something else if I need to.
+
+The destination is defined by `gulp.dest()` will be the last step of this task.
 This will use `.pipe()` to take whatever is in `src/scss/*.scss` and streams it into `dist/css`. 
 
 If we were to run this task now, this would simply move the `main.scss` file to `dist/css`.
