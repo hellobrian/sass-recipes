@@ -1,2 +1,0 @@
-# SCSS + Gulp
-
