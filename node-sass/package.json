@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass-build:compile": "node-sass-chokidar src/scss/ -o dist/css",
-    "sass-build:prefix": "postcss dist/css/*.css --use autoprefixer -d dist/css",
-    "sass:build": "npm-run-all -p sass-build:*",
+    "build-task:scss-compile": "node-sass-chokidar src/scss/ -o dist/css",
+    "build-task:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
+    "sass:build": "npm-run-all -p build-task:*",
     "sass:watch": "chokidar 'src/scss/**/*.scss' -c 'npm run sass:build'",
     "dev": "npm-run-all -p sass:*"
   },
