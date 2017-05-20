@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prefix": "postcss dist/css/*.css --use autoprefixer -d dist/css",
-    "compile": "node-sass-chokidar src/scss/ -o dist/css",
-    "sass:build": "npm-run-all -s compile prefix",
-    "sass:watch": "chokidar src/scss/**/*.scss -c 'npm run sass:build'",
+    "sass-build:compile": "node-sass-chokidar src/scss/ -o dist/css",
+    "sass-build:prefix": "postcss dist/css/*.css --use autoprefixer -d dist/css",
+    "sass:build": "npm-run-all -p sass-build:*",
+    "sass:watch": "chokidar 'src/scss/**/*.scss' -c 'npm run sass:build'",
     "dev": "npm-run-all -p sass:*"
   },
   "keywords": [],
