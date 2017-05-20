@@ -1,0 +1,15 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: $color__salmon;
+  border: 3px solid $color__salmon;
+  padding: .5rem 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color__salmon;
+    color: $color__white;
+  }
+}
