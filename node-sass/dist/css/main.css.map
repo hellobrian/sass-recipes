@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../../src/scss/main.scss",
+		"../../src/scss/globals/_reset.scss",
+		"../../src/scss/globals/_colors.scss",
+		"../../src/scss/components/_buttons.scss"
+	],
+	"names": [],
+	"mappings": "ACCA,AAAA,CAAC,CAAC;EACA,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC,GACV;;AEND,AAAA,IAAI,CAAC;EACH,OAAO,EAAE,IAAI;EACb,gBAAgB,EAAE,WAAW;EAC7B,KAAK,EDFS,MAAM;ECGpB,MAAM,EAAE,GAAG,CAAC,KAAK,CDHH,MAAM;ECIpB,OAAO,EAAE,UAAU;EACnB,MAAM,EAAE,OAAO,GAMhB;EAZD,AAQE,IARE,AAQF,MAAO,CAAC;IACN,gBAAgB,EDRJ,MAAM;ICSlB,KAAK,EDVO,IAAI,GCWjB;;AHPH,AAAA,GAAG,CAAC;EACF,OAAO,EAAE,WAAW;EACpB,KAAK,EAAE,IAAI,GACZ"
+}

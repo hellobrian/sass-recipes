@@ -1,0 +1,23 @@
+{
+  "name": "node-sass-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-task:scss-compile": "node-sass-chokidar --source-map true src/scss/ -o dist/css",
+    "build-task:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
+    "sass:build": "npm-run-all -p build-task:*",
+    "sass:watch": "chokidar 'src/scss/**/*.scss' -c 'npm run sass:build'",
+    "dev": "npm-run-all -p sass:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^7.1.1",
+    "chokidar-cli": "^1.2.0",
+    "node-sass-chokidar": "^0.0.1",
+    "npm-run-all": "^4.0.2",
+    "postcss-cli": "^4.0.0"
+  }
+}
