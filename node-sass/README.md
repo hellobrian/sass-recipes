@@ -23,8 +23,8 @@ yarn add node-sass-chokidar -S
 Then install all this other stuff
 
 ```sh
-yarn add autoprefixer chokidar-cli npm-run-all postcss-cli autoprefixer -S
-# npm i autoprefixer chokidar-cli npm-run-all postcss-cli autoprefixer -S
+yarn add autoprefixer chokidar-cli npm-run-all postcss-cli -S
+# npm i autoprefixer chokidar-cli npm-run-all postcss-cli -S
 ```
 
 ## Scripts
