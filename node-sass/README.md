@@ -35,11 +35,17 @@ yarn add autoprefixer chokidar-cli npm-run-all postcss-cli -S
     "build-task:scss-compile": "node-sass-chokidar --source-map true src/scss/ -o dist/css",
     "build-task:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
     "sass:build": "npm-run-all -p build-task:*",
-    "sass:watch": "chokidar 'src/scss/**/*.scss' -c 'npm run sass:build'",
+    "sass:watch": "chokidar 'src/scss/**/*.scss' -c 'npm run sass:build'"
     "dev": "npm-run-all -p sass:*"
   },
 }
 ```
+
+> ***Windows Users***: You may have trouble executing these scripts since they're written with single quotes. Try writing your scripts with ***double quotes only*** like this: 
+> ```json
+> {  "sass:watch": "chokidar \"src/scss/**/*.scss\" -c \"npm run sass:build\"",  }
+> ```
+> For more details, see [this issue here](https://github.com/kimmobrunfeldt/chokidar-cli/issues/36#issuecomment-342716351).
 
 When I work on projects, I run my dev environment using `npm run dev`; this will be the script we run to do all the SCSS things. 
 
