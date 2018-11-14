@@ -4,6 +4,7 @@
 
 ## TODO
 
+- parcel
 - webpack
 - css modules (with scss)
 - styled-components
