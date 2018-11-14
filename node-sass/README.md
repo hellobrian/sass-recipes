@@ -41,6 +41,13 @@ yarn add autoprefixer chokidar-cli npm-run-all postcss-cli -S
 }
 ```
 
+> **On Windows**: Be sure to wrap your double-quotes with double-quotes AND escape those inner double-quotes! 
+Here's a Windows friendly version of the watch script: 
+> ```
+> "watch": "chokidar \"src/scss/**/*.scss\" -c \"npm run sass:build\""
+>```
+
+
 When I work on projects, I run my dev environment using `npm run dev`; this will be the script we run to do all the SCSS things. 
 
 For modularity, `autoprefixer` and `compile` get their own scripts. Both are called with `npm run sass:build`.
