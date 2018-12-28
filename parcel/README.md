@@ -16,15 +16,13 @@ npm i parcel-bundler -D
 
 You only need two scripts:
 
+**package.json**
 ```json
-// package.json
 {
-  ...
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
-  ...
 }
 ```
 
@@ -32,17 +30,16 @@ You only need two scripts:
 
 Make a src directory with an index.html and index.scss.
 
+**src/index.scss**
 ```scss
-// src/index.scss
 $red: #e74c3c;
 
 h1 {
   color: $red;
 }
 ```
-
+**src/index.html**
 ```html
-<!-- src/index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,8 +57,8 @@ h1 {
 
 Note that in our src/index.html file, we tell it to use our scss file as the linked stylesheet:
 
+**src/index.html**
 ```html
-<!-- src/index.html -->
 <link rel="stylesheet" href="./index.scss" />
 ```
 
@@ -77,10 +74,9 @@ npm run dev
 
 Now your package.json dependencies should look like this:
 
+**package.json**
 ```json
-// package.json
 {
-  ...
   "devDependencies": {
     "parcel-bundler": "^1.11.0",
     "sass": "^1.15.2"
