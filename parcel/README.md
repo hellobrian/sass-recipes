@@ -1,5 +1,7 @@
 # Using Parcel
 
+> 📝Tutorial: https://www.brianhan.co/parcel-for-your-sass
+
 Parcel is a really great alternative to Webpack. If I decide I want to use SCSS in my project, I usually reach for Parcel as my preferred way of compiling SCSS to CSS.
 
 ## Install
