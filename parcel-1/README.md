@@ -1,6 +1,4 @@
-# Using Parcel
-
-> 📝Tutorial: https://www.brianhan.co/parcel-for-your-sass
+# Using Parcel 1 (`parcel-bundler`)
 
 Parcel is a really great alternative to Webpack. If I decide I want to use SCSS in my project, I usually reach for Parcel as my preferred way of compiling SCSS to CSS.
 
@@ -19,12 +17,13 @@ npm i parcel-bundler -D
 You only need two scripts:
 
 **package.json**
+
 ```json
 {
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
-  },
+  }
 }
 ```
 
@@ -33,6 +32,7 @@ You only need two scripts:
 Make a src directory with an index.html and index.scss.
 
 **src/index.scss**
+
 ```scss
 $red: #e74c3c;
 
@@ -40,7 +40,9 @@ h1 {
   color: $red;
 }
 ```
+
 **src/index.html**
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -60,13 +62,14 @@ h1 {
 Note that in our src/index.html file, we tell it to use our scss file as the linked stylesheet:
 
 **src/index.html**
+
 ```html
 <link rel="stylesheet" href="./index.scss" />
 ```
 
 ## Parcel installs Sass for us
 
-Spoiler alert! Parcel uses index.html as the entry point to all of our external files (scss, js, etc.). When we declare as scss file in our html file, Parcel is smart enough to know that it should install `sass` for us if it's missing from our package.json.
+Spoiler alert! Parcel uses index.html as the entry point to all of our external files (scss, js, etc.). When we declare a scss file in our html file, Parcel knows that it should install `sass` for us if it's missing from our package.json.
 
 Try running the dev script:
 
@@ -77,6 +80,7 @@ npm run dev
 Now your package.json dependencies should look like this:
 
 **package.json**
+
 ```json
 {
   "devDependencies": {
