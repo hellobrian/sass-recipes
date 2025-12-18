@@ -1,0 +1,15 @@
+@import 'colors';
+@import 'mixins';
+
+* {
+  @include reset;
+}
+
+h1 {
+  background-color: $blue-midnight;
+  color: $white-clouds;
+}
+
+div {
+  display: grid;
+}
