@@ -2,7 +2,8 @@
 
 ## Legacy
 
-- [parcel 1 (`parcel-bundler`)](https://github.com/hellobrian/sass-recipes/tree/master/parcel-1)
+- [parcel 1](https://github.com/hellobrian/sass-recipes/tree/master/parcel-1)
+  - uses parcel 1 aka `parcel-bundler`
 
 ## Deprecated
 
